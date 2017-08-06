@@ -3,14 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "express": "^4.15.3",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "socket.io": "^2.0.3",
+    "websocket": "^1.0.24"
   },
   "devDependencies": {
-    "react-scripts": "1.0.10"
+    "chai": "^4.1.1",
+    "node-sass-chokidar": "0.0.3",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.2",
+    "react-scripts": "1.0.10",
+    "socket.io": "^2.0.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "build-css": "node-sass-chokidar scss/ -o public/styles/",
+    "watch-css": "npm run build-css && node-sass-chokidar scss/ -o public/styles/ --watch --recursive",
+    "api": "nodemon ./chat-api/chat.js",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js api",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
