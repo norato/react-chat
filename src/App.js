@@ -1,8 +1,25 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+
+import io from "socket.io-client"
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      messages : []
+    }
+  }
+
+  componentDidMount(){
+    this.socket = io(`http://localhost:3001/`)
+    this.socket.emit('send message', {messages: 'lolhehehe'});
+    this.socket.on('new message', (msg)=>{
+      console.log(msg)
+    })
+  }
+  
   render() {
     return (
       <div className="App">
