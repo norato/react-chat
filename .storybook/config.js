@@ -3,7 +3,8 @@
 import { configure } from '@storybook/react';
 
 function loadStories() {
-  require('../src/stories');
+  require('../src/stories/index');
+  require('../src/stories/TextField');
 }
 
 configure(loadStories, module);
