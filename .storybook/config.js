@@ -9,6 +9,7 @@ function loadStories() {
   require('../src/stories/ButtonSubmit');
   require('../src/stories/MessageForm');
   require('../src/stories/Message');
+  require('../src/stories/MessageList'); 
 }
 
 configure(loadStories, module);
