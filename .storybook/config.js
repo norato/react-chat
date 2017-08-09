@@ -8,6 +8,7 @@ function loadStories() {
   require('../src/stories/MessageField');
   require('../src/stories/ButtonSubmit');
   require('../src/stories/MessageForm');
+  require('../src/stories/Message');
 }
 
 configure(loadStories, module);

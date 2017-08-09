@@ -14,12 +14,12 @@
     "socket.io-client": "^2.0.3"
   },
   "devDependencies": {
+    "@storybook/react": "^3.2.3",
     "chai": "^4.1.1",
     "node-sass-chokidar": "0.0.3",
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.2",
-    "react-scripts": "1.0.10",
-    "@storybook/react": "^3.2.3"
+    "react-scripts": "1.0.10"
   },
   "scripts": {
     "build-css": "node-sass-chokidar scss/ -o public/styles/",
