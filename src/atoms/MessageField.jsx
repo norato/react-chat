@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default function MessageField(params) {
-  return (
-    <div className="message-field">
-      <input
-        type="text" placeholder="Type a message"
-      />
-    </div>
-  )
+export default class MessageField extends Component {
+  render(){
+    return (
+      <div className="message-field">
+        <input
+          type="text" placeholder="Type a message"
+        />
+      </div>
+    )
+  }
 }

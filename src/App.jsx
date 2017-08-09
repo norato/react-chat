@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import io from "socket.io-client"
 
+import MessageForm from './organisms/MessageForm';
+
 import {
-  send_message
-  , receive_message
+  receive_message
 } from './actions'
 
 class App extends Component {
@@ -19,15 +20,14 @@ class App extends Component {
       this.props.dispatch(receive_message(msg))
     })
   }
-  __sendMessage(){
-    let message = `Send Message ${Date()}`
-    this.props.dispatch(send_message({socket: this.socket, message: message}))
-  }
 
   render() {
     return (
       <div className="App">
-        <button onClick={this.__sendMessage.bind(this)}>send_message</button>
+        <MessageForm
+          dispatch={ this.props.dispatch }
+          socket={ this.socket } 
+        />
         <div>
           <ul>
             {
