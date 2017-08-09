@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 
 export default class MessageField extends Component {
-  getvalue(){
-    return this.refs.message.value
+  getValue(){
+    return this.refs.message.value;
+  }
+  clearValue() {
+    this.refs.message.value = "";
   }
   render(){
     return (

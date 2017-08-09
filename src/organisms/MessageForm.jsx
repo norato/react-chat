@@ -10,13 +10,12 @@ class MessageForm extends Component {
     super(props)
   }
   __sendMessage(){
-    let message = {
-      text: this.textInput.getvalue(),
-      time: `${Date()}`,
-      type: 'sent'
-    }
-    
-    this.props.dispatch(send_message({socket: this.props.socket, message: message}))
+    let text =  this.textInput.getValue()
+    this.textInput.clearValue()
+    this.props.dispatch(send_message({
+      socket: this.props.socket,
+      message: text}
+    ))
   }
   render() {
     return (

@@ -16,7 +16,7 @@ storiesOf('MessageForm', module)
         padding: '15px 15px 0 15px'
       }}
       >
-        <MessageForm />
+        <MessageForm/>
       </div>
     )
   });

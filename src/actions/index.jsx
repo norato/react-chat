@@ -3,7 +3,11 @@ export const RECEIVE_MESSAGE = Symbol('RECEIVE_MESSAGE')
 
 export const send_message = (data) =>{
   return (dispatch, getState) => {
-    let message = data.message
+    let message = {
+      text: data.message,
+      time: `${Date()}`,
+      type: 'sent'
+    }
     data.socket.emit('send message', message);
     dispatch({
       type: SEND_MESSAGE
