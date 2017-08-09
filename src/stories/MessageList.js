@@ -7,15 +7,15 @@ import { linkTo } from '@storybook/addon-links';
 
 import MessageList from '../organisms/MessageList';
 
-let time = new Date()
+let time = "Wed Aug 09 2017 12:41:17 GMT-0300 (BRT)"
 const messages = [
   {
     text: 'Default Message',
-    time: time.toString(),
+    time: time,
     type: 'sent'
   },
   {
-    time: time.toString(),
+    time: time,
     type: 'received',
     text: `Lorem ipsum dolor sit amet,
             consectetur adipiscing elit. Cras maximus iaculis mauris,
@@ -24,11 +24,11 @@ const messages = [
   },
   {
     text: 'Default Message',
-    time: time.toString(),
+    time: time,
     type: 'received'
   },
   {
-    time: time.toString(),
+    time: time,
     type: 'sent',
     text: `Lorem ipsum dolor sit amet,
             consectetur adipiscing elit. Cras maximus iaculis mauris,
@@ -37,11 +37,11 @@ const messages = [
   },
   {
     text: 'Default Message',
-    time: time.toString(),
+    time: time,
     type: 'sent'
   },
   {
-    time: time.toString(),
+    time: time,
     type: 'received',
     text: `Lorem ipsum dolor sit amet,
             consectetur adipiscing elit. Cras maximus iaculis mauris,
@@ -54,11 +54,6 @@ const Messages = Immutable.fromJS(messages);
 
 storiesOf('MessageList', module)
   .add('default', () => {
-    let time = new Date()
-    let message = {
-      text: 'Default Message',
-      time: time.toString()
-    }
     return (
       <div
       style={{
