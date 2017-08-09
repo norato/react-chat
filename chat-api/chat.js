@@ -34,6 +34,8 @@ io.sockets.on('connection', (socket) => {
 
   socket.on('send message', (data)=>{
     console.log(data)
-    io.sockets.emit('new message', {msg: data })
+    let message = { messages: `Receive message ${Date()}`}
+    console.log(message)
+    io.sockets.emit('new message', {msg: message })
   })
 })

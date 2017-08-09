@@ -20,14 +20,14 @@ class App extends Component {
     if (this.props.socket) {
       return this.props.socket.on('new message', (msg)=>{
         this.props.dispatch(receive_message(msg))
-        return true;
+        return false;
       })
     }
     return false
-
   }
   __sendMessage(){
-    this.props.dispatch(send_message({messages: 'lolhehehe'}))
+    let message = `Send Message ${Date()}`
+    this.props.dispatch(send_message({messages: message}))
   }
 
   render() {

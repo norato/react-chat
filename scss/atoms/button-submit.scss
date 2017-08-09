@@ -1,0 +1,29 @@
+.button-submit {
+  background: #008a7c ;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  height: 33px;
+  width: 45px;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  margin-left: 7px;
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 6px;
+    height: 18px;
+    background: #fff;
+    left: 50%
+  }
+  &::before {
+    transform: rotate(-137deg);
+    bottom: 3px;
+  }
+  &::after {
+    transform: rotate(-45deg);
+    top: 2px;
+  }
+}
