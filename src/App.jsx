@@ -25,12 +25,16 @@ class App extends Component {
   render() {
     let { Messages } = this.props
     return (
-      <div className="App">
+      <div className="app-container">
+        <MessageList
+          className="app-container__message-list"
+          Messages={Messages}
+        />
         <MessageForm
+          className="app-container__message-form"
           dispatch={ this.props.dispatch }
           socket={ this.socket } 
         />
-        <MessageList Messages={Messages}/>
       </div>
     );
   }

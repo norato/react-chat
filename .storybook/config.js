@@ -10,6 +10,7 @@ function loadStories() {
   require('../src/stories/MessageForm');
   require('../src/stories/Message');
   require('../src/stories/MessageList'); 
+  require('../src/stories/App'); 
 }
 
 configure(loadStories, module);

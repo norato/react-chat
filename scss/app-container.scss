@@ -1,0 +1,14 @@
+.app-container {
+  padding: 3px;
+  background: #eee;
+  position: relative;
+  width: 100vw;
+  height: auto;
+  &__message-list {
+    height: 90vh;
+    overflow: auto;
+  }
+  &__message-form {
+    position: fixed;
+  }
+}
