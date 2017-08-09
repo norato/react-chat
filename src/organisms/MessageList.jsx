@@ -1,5 +1,4 @@
 import React from 'react';
-import { getTime } from '../utils';
 import Message from '../atoms/Message'
 
 export default function MessageList(props) {

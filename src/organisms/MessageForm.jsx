@@ -6,9 +6,6 @@ import {
 } from '../actions'
 
 class MessageForm extends Component {
-  constructor(props){
-    super(props)
-  }
   __sendMessage(){
     let text =  this.textInput.getValue()
     this.textInput.clearValue()
