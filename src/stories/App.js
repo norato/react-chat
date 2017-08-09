@@ -64,11 +64,9 @@ storiesOf('App', module)
     return (
       <div className="app-container"> 
         <MessageList
-          className="app-container__message-list"
           Messages={Messages}
         />
         <MessageForm 
-          className="app-container__message-form"
         />
       </div>
     )

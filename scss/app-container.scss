@@ -4,11 +4,12 @@
   position: relative;
   width: 100vw;
   height: auto;
-  &__message-list {
+  padding: 15px 15px 0 15px;
+  & .message-list {
     height: 90vh;
     overflow: auto;
   }
-  &__message-form {
+  & .message-form {
     position: fixed;
   }
 }
