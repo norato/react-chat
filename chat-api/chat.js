@@ -38,9 +38,9 @@ io.sockets.on('connection', (socket) => {
     let message = {
       text: "Message from socketIO",
       time: time.toString(),
-      type: 'sent'
+      type: 'received'
     }
     console.log(message)
-    io.sockets.emit('new message', {msg: message })
+    io.sockets.emit('new message', {message: message })
   })
 })

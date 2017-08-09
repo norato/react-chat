@@ -1,15 +1,18 @@
 import React from 'react';
 import { getTime } from '../utils';
+import Immutable from 'immutable'
+
 
 export default function Message(props) {
+  let message = Immutable.fromJS(props.message)
   return (
-    <div className={`message ${props.message.get('type')}`}>
+    <div className={`message ${message.get('type')}`}>
       <p>
-        { props.message.get('text') }
+        { message.get('text') }
       </p>
       <span>
         {
-          getTime(props.message.get('time'))
+          getTime(message.get('time'))
         }
       </span>
     </div>

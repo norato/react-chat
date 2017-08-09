@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import io from "socket.io-client"
 
 import MessageForm from './organisms/MessageForm';
+import MessageList from './organisms/MessageList';
 
 import {
   receive_message
@@ -22,24 +23,14 @@ class App extends Component {
   }
 
   render() {
+    let { Messages } = this.props
     return (
       <div className="App">
         <MessageForm
           dispatch={ this.props.dispatch }
           socket={ this.socket } 
         />
-        <div>
-          <ul>
-            {
-              this.props.Messages &&
-                this.props.Messages.entrySeq().map((entry) => {
-                  let index = entry[0]
-                  let message = entry[1]
-                  return <li key={index}>{message.messages}</li>
-                })
-            }
-          </ul>
-        </div>
+        <MessageList Messages={Messages}/>
       </div>
     );
   }
