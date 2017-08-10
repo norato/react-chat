@@ -14,10 +14,19 @@ class MessageForm extends Component {
       message: text}
     ))
   }
+  __handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      this.__sendMessage()
+    }
+  }
+
   render() {
     return (
       <div className="message-form">
-        <MessageField ref={(input) => { this.textInput = input; }} />
+        <MessageField
+          ref={(input) => { this.textInput = input; }}
+          onKeyPress={this.__handleKeyPress.bind(this)}
+        />
         <ButtonSubmit onClick={this.__sendMessage.bind(this)}/>
       </div>
     )

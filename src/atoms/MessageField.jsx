@@ -14,6 +14,7 @@ export default class MessageField extends Component {
           type="text"
           placeholder="Type a message"
           ref='message'
+          onKeyPress={this.props.onKeyPress}
         />
       </div>
     )
