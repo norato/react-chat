@@ -26,4 +26,10 @@
     transform: rotate(-45deg);
     top: 2px;
   }
+  &.hide {
+    display: none;
+  }
+  &.show {
+    display: block;
+  }
 }

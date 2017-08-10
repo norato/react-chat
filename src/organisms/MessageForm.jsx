@@ -6,6 +6,12 @@ import {
 } from '../actions'
 
 class MessageForm extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      buttonClassName : 'hide'
+    }
+  }
   __sendMessage(){
     let text =  this.textInput.getValue()
     this.textInput.clearValue()
@@ -19,6 +25,18 @@ class MessageForm extends Component {
       this.__sendMessage()
     }
   }
+  
+  __handleFocus(e) {
+    this.setState({
+      buttonClassName: 'show'
+    })
+  }
+  
+  __handleBlur(e) {
+    this.setState({
+      buttonClassName: 'hide'
+    })
+  }
 
   render() {
     return (
@@ -26,8 +44,13 @@ class MessageForm extends Component {
         <MessageField
           ref={(input) => { this.textInput = input; }}
           onKeyPress={this.__handleKeyPress.bind(this)}
+          onFocus={this.__handleFocus.bind(this)}
+          onBlur={this.__handleBlur.bind(this)}
         />
-        <ButtonSubmit onClick={this.__sendMessage.bind(this)}/>
+        <ButtonSubmit
+          onClick={this.__sendMessage.bind(this)}
+          className={ this.state.buttonClassName }
+        />
       </div>
     )
   }
