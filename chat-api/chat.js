@@ -32,15 +32,28 @@ io.sockets.on('connection', (socket) => {
     console.log(`Disconected: ${connections.length} sockets connected.`);
   })
 
+  // New Message
   socket.on('send message', (data)=>{
     console.log(data)
-    let time = new Date()
-    let message = {
-      text: "Message from socketIO",
-      time: time.toString(),
-      type: 'received'
+    let message;
+    if ( connections.length > 1 ) {
+      message = data
+      message['user'] = socket.username
+    } else {
+      let time = new Date()
+      message = {
+        text: "Sorry, but are alone in the room",
+        time: time.toString(),
+        user: 'Bot'
+      }
     }
     console.log(message)
     io.sockets.emit('new message', {message: message })
+  })
+
+  // New User
+  socket.on('new user', (data)=> {
+    socket.username = data;
+    users.push(socket.username)
   })
 })
